@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Testing slide this is
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+</head>
+<body>
+  
+   <div class="flex-container">
+     <style>body{
+      background-image: url(static/j1.jfif);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-image: 0.2;
+
+    }</style>
+    </div>
+   
+    <section>
+   <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Thought</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/analyze">Analayze</a>
+        </li>
+      </ul>
+    </section>
+  
+    </div>
+  </nav>
+  <div class="pad">
+        <h1>THOUGHT PROCESS ANALYZER</h1>
+        <div class="tet">
+            <p>A Thought
+                "Balanced existence, one in which all aspects of human existence are balanced, is the only correct way of life. In such a life, material values and spiritual values go side by side, and one should not be neglected for the other." </p>
+        </div>
+        <head>CHECK YOUR THOUGHT LEVELS</head>
+        <div class="row">
+          <div  class="col-lg-6">
+            <form method="post" action="/analyze">
+                <textarea name="text" id="1" cols="100" rows="15" style="background-color:#b7a8e7 ;" placeholder="Write your thoughts" style="width:70%;" autofocus value="{{ message }}"></textarea>
+                <br>
+                <input type="submit" value="Analayze" class="btn btn-primary" .button1 {padding: 10px 24px;}>
+                
+            </form>
+          
+        
+            {% if report %}
+            <table class="table table-unborderd">
+                <tr>
+                    <th> POSITIVE LEVEL     </th>
+                    <th> NEUTRAL LEVEL      </th>
+                    <th> NEGATIVE LEVEL     </th>
+                    <th> tete LEVEL     </th>
+                    <th> STATE              </th>
+                </tr>
+                <tr>
+                    <td id="pos"> {{ report['positive'] }} </td>
+                    <td id="neu"> {{ report['neutral'] }} </td>
+                    <td id="neg"> {{ report['negative']  }} </td>
+                    <td id ="tet"> {{ report['positive'] }}</td>
+                    <td> {{ report['state']    }} </td>
+                </tr>
+            </table>
+           
+            {% endif %}
+      </div>
+        
+      <div id="piechart" class="col-lg-6">
+    
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" ></script>
+        <script type="text/javascript" class="gh">
+      
+      // Load google charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+    
+        var pos = parseFloat($(report['pos'] ).val());
+        var neg = document.getElementById('neg');
+        var neu = document.getElementById('neu');
+    
+          // Draw the chart and set the chart values
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+              ['happy', 'Hours per Day'],
+              ['sad', pos],
+              ['neutral', 50.6],
+              ]);
+    
+            // Optional; add a title and set the width and height of the chart
+          var options = {'title':'Overall Mood', 'width':350, 'height':300};
+     
+    
+           // Display the chart inside the <div> element with id="piechart"
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      
+            chart.draw(data, options);
+        }
+    </script>
+     </div>
+   </div>
+
+   
+
+</body>
+<div>
+            <marquee behavior="alternate" direction="right">
+               To know better about your mood u can click here any related emoji regarding ur mood! </marquee>
+    
+</div>
+
+<footer class="text-center text-white" style="background-color: #86dceb;">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Images -->
+    <section class="">
+      <div class="row">
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          ><a href="https://www.verywellmind.com/top-reasons-to-smile-every-day-2223755">
+            <img
+              src="static/happy.jfif"  width="150" height="150"
+              class="w-100"
+            />
+          </a>
+            
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          ><a href="https://www.makeuseof.com/tag/happiest-sites-web/">
+            <img
+              src="static/neutral.jfif" width="150" height="150"
+              class="w-100"
+            />
+          </a>
+        
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          ><a href="https://www.betterhealth.vic.gov.au/health/healthyliving/anger-how-it-affects-people">
+            <img
+              src="static/anger.jfif" width="150" height="150"
+              class="w-100"
+            />
+          </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          ><a href="https://mhanational.org/18-ways-cope-frustration">
+            <img
+              src="static/frustation.jfif" width="150" height="150"
+              class="w-100"
+            />
+          </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          ><a href="https://healthcare.utah.edu/the-scope/shows.php?shows=1_ecpndxrf">
+            <img
+              src="static/love.jfif" width="150" height="150"
+              class="w-100"
+            />
+            </a>
+            
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          ><a href="https://go.veritable.media/?page=overcomingsadness&kw=why%20am%20i%20so%20sad&mt=b&loc=1007740&n=g&d=c&adp=&cid=9228203430&adgid=112711248386&tid=kwd-296713194688&gclid=CjwKCAjwzY2bBhB6EiwAPpUpZrUQDYLOLwMAqHJQQR_AeaV8mHlqlcf2EaMzWKmDDCaXYOIkiTVVexoCL7kQAvD_BwE">
+            <img
+              src="static/sad.jfif" width="150" height="150"
+              class="w-100"
+            />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Images -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-black p-3" style="background-color: rgba(126, 169, 232, 0.2);">
+    © 2022 Copyright:
+    <a class="text-black p-3" href="#!">Team 23.com</a>
+  </div>
+</div>
+  <!-- Copyright -->
+</footer>
+

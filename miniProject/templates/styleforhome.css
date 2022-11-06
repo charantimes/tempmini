@@ -1,0 +1,15 @@
+.carousel-inner {
+    background-color: bisque;
+    margin-top: 15px;
+    margin-bottom: 10px;
+   margin-right: 50px;
+   margin: auto;
+   margin-inline-end: 100px;
+   
+  }
+  p{
+    background-color: rgb(132, 132, 151);
+  }
+  .bg{
+    background-color: aquamarine;
+  }
